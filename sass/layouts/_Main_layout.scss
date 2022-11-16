@@ -1,0 +1,257 @@
+main{
+    .city_form{
+        /* Parametre du formulaire de ville */
+        @extend %flex_parameter;
+        @include set_background_color($primary_color);
+        @include centering_content;
+        padding-left: 50px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 15px;
+        width: 200px;
+        height: 50px;
+        margin: auto;
+        &--marker{
+            color: $fifth_color;
+        }
+        &_input{
+            outline: none;
+            border: none;
+            padding-top: 5px;
+            padding-left: 12px;
+            @include set_background_color($primary_color);
+        }
+        &_input::placeholder{
+            color: $fifth_color;
+            font-weight: bolder;
+            font-size: 17px;
+        }
+    }
+    .explore_and_working_section{
+        /* Parametre de la section regroupant exploration et fonctionnement */
+        @extend %flex_parameter;
+        @include column_parameter;
+        .explore_article{
+            /* Parametre de la partie exploration */
+            @include centering_content;
+            @include text_center;
+            @extend %flex_parameter;
+            @include column_parameter;
+            padding: 25px;
+            padding-top: 40px;
+            margin: 1%;
+            border-radius: 15px;
+            @include set_background_color(rgb(245, 237, 255));
+            
+            p{
+                color: $fifth_color;
+                font-size: 23px;
+                padding-bottom: 25px;
+            }
+
+            &_title{
+                font-weight: bold;
+                font-size: 35px;
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+            .btn{
+                /* Parametre du boutton */
+                @include box_shadow;
+                @include btn_style;
+                
+            }
+            .btn:hover{
+                animation : shadow-hover 500ms forwards;
+                background: linear-gradient(160deg,lighten( rgba(237,115,218), 5%) 0%,lighten(rgba(161,91,220), 5%) 100%);
+                cursor: pointer;
+            }
+        }
+    
+        .explore_article > * {
+            margin: 10px;
+        }
+        .working_article {
+            /* Parametre de la partie fonctionnement */
+            @extend %flex_parameter;
+            @include column_parameter;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            width: 100%;
+
+            h3{
+                padding: 10px;
+                font-size: 30px;
+                padding-bottom: 30px;
+                padding-left: 20px;
+            }
+            &_list{
+                /* Parametre de la liste du fonctionnement */
+                @extend %flex_parameter;
+                &_item{
+                    /* Parametre des item de la liste fonctionnement */
+                    @include box_shadow;
+                    @extend %flex_parameter;
+                    align-items: center;
+                    @include set_background_color($primary_color);
+                    margin-bottom: 15px;
+                    padding: 25px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 20px;
+                    width: 25%;
+                    cursor: pointer;
+                    &_description{
+                        @extend %flex_parameter;
+                        align-items: center;
+                    }
+                    &_icon{
+                        /* Parametre des icons de la liste fonctionnement */
+                        width: 40px;
+                        height: 40px;
+                        font-size: 25px;
+                        color: $quaternary_color;
+                        @extend %flex_parameter;
+                        @include centering_content;
+                        padding-left: 15px;
+                        padding-right: 30px;
+                    }
+                    &_text{
+                        /* Parametre du texte de la liste fonctionnement */
+                        font-weight: bold;
+                        font-size: 20px;
+                    }
+                    &_number{
+                        /* Parametre des numéros de la liste fonctionnement */
+                        @include set_background_color($tertiary_color);
+                        @extend %flex_parameter;
+                        @include centering_content;
+                        @include set_background_color($tertiary_color);
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        font-size: 15px;
+                        color: $basic_color;
+                        margin-left: -40px;
+                    }
+                }
+                &_item:last-child{
+                    /* Parametre du dernier item de la liste fonctionnement */
+                    background-color: rgb(245, 237, 255);
+
+                    .working_article_list_item_icon{
+                        color: $tertiary_color;
+                    }
+                }
+            }
+        }
+
+    }  
+
+    .restaurants_section{
+        /* Parametre de la partie restaurant */
+        @include set_background_color($primary_color);
+        padding-bottom: 50px;
+        padding-top: 50px;
+        border-radius: 20px;
+        margin: 1%;
+
+        h3{
+            font-size: 30px;
+            padding: 10px;
+            padding-bottom: 20px;
+        }
+        .restaurants_article_list{
+            /* Parametre de la liste d'article restaurant */
+            @extend %flex_parameter;
+            flex-wrap: wrap;
+            margin: auto;
+            .restaurants_list_item{
+                /* Parametre des articles restaurants */
+                text-decoration: none;
+                color: black;
+                width: 50%;
+
+                figure{
+                    /* Parametre de l'image d'un restaurant */
+                    @include set_background_color($basic_color);
+                    @include box_shadow;
+                    border-radius: 15px;
+                    position: relative;
+                    display: block;
+                    margin: 10px;
+                }
+
+                &_image{
+                    width: 100%;
+                    height:220px;
+                    object-fit: cover;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                }
+
+                &_description{
+                    /* Parametre de la description d'un restaurant */
+                    @extend %flex_parameter;
+                    @include column_parameter;
+                    flex-wrap: wrap;
+                    height: 70px;
+                    padding: 15px;
+
+                    h4{
+                        font-weight:900;
+                        font-size: 25px;
+                        padding-bottom: 5px;
+                    }
+                    span{
+                        font-size: 25px;
+                        color: $fifth_color;
+                    }
+
+                    &_heart{
+                        /* Parametre de l'icon coeur d'un restaurant */
+                        @extend %flex_parameter;
+                        flex-grow: 1;
+                        height: 100%;
+                        align-items: center;
+                        justify-content: right;
+
+                        &_1{
+                            /* Parametre du coeur du restaurant */
+                            font-size: 30px;
+                            color: transparent;
+                            -webkit-text-stroke: 1px darkslategray;
+                            stroke-width: 50;
+                        }
+            
+                        &_1:hover{
+                            /* Parametre de l'animation du coeur*/
+                            -webkit-text-stroke: 1px transparent;
+                            animation: fill 1s ease-out;
+                            background: linear-gradient(#FF79DA, #9356DC);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                &_badge{
+                    /* Parametre du badge nouveau d'un restaurant */
+                    @include set_background_color($primary_badge_color);
+                    color: $secondary_badge_color;
+                    font-weight: bold;
+                    padding: 10px;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                }
+            }
+
+            .restaurants_list_item figure:hover{
+                animation: shadow-hover  500ms forwards;
+            }
+        }
+    }
+}
+
+

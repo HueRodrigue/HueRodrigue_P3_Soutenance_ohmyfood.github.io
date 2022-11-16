@@ -1,0 +1,122 @@
+@import "./utils/_variables.scss";
+@import "./utils/_mixins.scss";
+@import "./utils/_placeholder.scss";
+@import "./layouts/_Loader_layout.scss";
+@import "./layouts/_Header_layout.scss";
+@import "./layouts/_Main_layout.scss";
+@import "./layouts/_Footer_layout.scss";
+@import "./layouts/Restaurant_header_layout.scss";
+@import "./layouts/Restaurant_main_layout.scss";
+@import "./base/_animations.scss"; 
+@import "./base/_base.scss";
+
+
+@media(max-width:992px) {
+    .Content_container{
+        max-width: 992px;
+    }
+
+    main .explore_and_working_section .working_article{ 
+        .working_article_list{
+            @include column_parameter;
+            
+            &_item{
+                width: 80%;
+            }
+        }
+    }
+    
+    .restaurant_main {
+        @include column_parameter;
+        .menu_section{
+            &_entry ,&_dish , &_dessert{
+                width: 100%;
+                margin: auto;
+            }
+        }
+    }
+
+}
+
+
+
+@media(max-width:768px){
+    #Content_container{
+        max-width: 768px;
+    }
+
+    main{
+        .city_form{
+            @extend %flex_parameter;
+            @include set_background_color($secondary_color);
+            @include centering_content;
+            box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.5);
+            border-radius: 0px;
+            width: auto;
+            padding-left: 20px;
+
+            &_input{
+                @include set_background_color($secondary_color);
+                outline: none;
+                border: none;
+                padding-left: 10px;
+            }
+        }
+
+        .explore_and_working_section{
+            @include column_parameter;
+
+            .explore_article{
+                @include set_background_color($primary_color);
+                width: auto;
+                margin: 0px;
+                border-radius: 0px;
+        
+                &_list{
+                    @include column_parameter;
+                }
+            }
+
+            .working_article {
+                &_list{
+                    &_item{
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        .restaurants_section{
+            border-radius: 0px ;
+            margin : 0px;
+            h3{
+                padding-left: 20px;
+            }
+            .restaurants_article_list{
+                @include column_parameter;
+                width: auto;
+                .restaurants_list_item{
+                    margin: auto;
+                    width: 94%;
+                }  
+            }
+        }
+        
+    }
+
+    .restaurant_main {
+        @include set_background_color($primary_color);
+        margin-bottom: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        .menu_section{
+            &_entry ,&_dish , &_dessert{
+                width: 100%;
+            }
+        }
+    }
+
+    .footer_list{
+        @include column_parameter;
+    }
+}

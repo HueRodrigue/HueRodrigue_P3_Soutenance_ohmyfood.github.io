@@ -1,0 +1,227 @@
+.restaurant_main{
+    /* Page Restaurant */
+    @include set_background_color($primary_color);
+    margin-bottom: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+
+    .main_banner{
+        /* Banniere*/
+        width:100%;
+        z-index: 1;
+        
+        &_image{
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .menu_section{
+        /* Parametre de la partie menu */
+        transform: translateY(-50px);
+        z-index: 2;
+        background-color: $basic_color;
+        padding: 20px;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        @include set_background_color($primary_color);
+        display: flex;
+        flex-wrap: wrap;
+        
+        .main_title{
+            /* Parametre du titre du restaurant */
+            @extend %flex_parameter;
+            font-family: $title_police;
+            font-weight: bold;
+            align-items: center;
+            padding-top: 20px;
+            font-size: 30px;
+            justify-content: space-between;
+            width: 100%;
+
+            &_heart_1{
+                /* Parametre du coeur du restaurant */
+                font-size: 30px;
+                color: transparent;
+                -webkit-text-stroke: 1px darkslategray;
+                stroke-width: 50;
+            }
+
+            &_heart_1:hover{
+                /* Parametre de l'animation du coeur*/
+                -webkit-text-stroke: 1px transparent;
+                animation: fill 1s ease-out;
+                background: linear-gradient(#FF79DA, #9356DC);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: bold;
+
+            }
+        }
+
+        &_entry, &_dish, &_dessert{
+            /* Parametre des titres entrées plats desserts */
+            @extend %menu_params;
+            
+            h3{
+                @extend %menu_section_params;
+            }
+
+            h3::before{
+                @extend %menu_section_before_params;
+            }
+
+            .item{
+                /* Parametre des cartes des plats */
+                @include box_shadow;
+                @include set_background_color($basic_color);
+                @extend %flex_parameter;
+                text-decoration: none;
+                color: black;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                align-items: center;
+                width: 100%;
+                height: 110px;
+                border-radius: 15px;
+                overflow: hidden;
+
+                &_description{
+                    /* Parametre des descriptions des plats */
+                    @extend %flex_parameter;
+                    width: 100%;
+                    justify-content: space-between;
+                    padding:20px;
+                    min-width: 0px;
+
+                    &_text{
+                        min-width: 0px;
+
+                        h4 {
+                            font-size: 25px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        p{
+                            font-size: 25px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+
+                    &_price{
+                        /* Parametre du prix */
+                        align-self: flex-end;
+                        font-weight: bold;
+                        font-size: 25px;
+                    }
+                }
+
+                &_validate{
+                    /*Parametre de la partie validation */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: -150px;
+                    background-color: #99E2D0;
+                    color: #FFF;
+                    font-size: 30px;
+                    border-top-right-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                    height: 100%;
+                    width: 150px;
+                    transition: margin-right 0.8s ease-in-out;
+                }
+              
+            }
+
+            .item:hover .item_validate {
+                /* Animation check */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 0;
+
+                
+            }
+
+            .item:hover .item_validate i{
+                animation: spin 1.5s;
+            }
+
+            
+            .item{
+                &_1 {
+                    animation: menu-apparition 2s forwards;
+                    
+                }
+            
+                &_2 {
+                    animation: menu-apparition 2.5s forwards;
+                }
+            
+                &_3 {
+                    animation: menu-apparition 3s forwards;
+                }
+            
+                &_4 {
+                    animation: menu-apparition 3.5s forwards;
+                }
+            
+                &_5 {
+                    animation: menu-apparition 4s forwards;
+                }
+            
+                &_6 {
+                    animation: menu-apparition 4.5s forwards;
+                }
+            
+                &_7 {
+                    animation: menu-apparition 5s forwards;
+                }
+            
+                &_8 {
+                    animation: menu-apparition 5.5s forwards;
+                }
+            
+                &_9 {
+                    animation: menu-apparition 6s forwards;
+                }
+
+                &_10 {
+                    animation: menu-apparition 6.5s forwards;
+                }
+            }
+        }
+    }
+
+    .main_submitbutton{
+        /* Parametre du boutton de validation de commande */
+        @extend %flex_parameter;
+        @include centering_content;
+    }
+
+    .btn{
+        /* Parametre boutton */
+        @include box_shadow;
+        @include btn_style;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .btn:hover{
+        animation : shadow-hover 500ms forwards;
+        background: linear-gradient(160deg,lighten( rgba(237,115,218), 5%) 0%,lighten(rgba(161,91,220), 5%) 100%);
+        cursor: pointer;
+    }
+}
+
+  
+  
+
+  

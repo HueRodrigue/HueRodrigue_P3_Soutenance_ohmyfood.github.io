@@ -1,0 +1,709 @@
+@charset "UTF-8";
+/* Style d'un boutton */
+/* Centrage d'un item*/
+/* Centrage du texte */
+/* Fonction permettant d'appliquer une couleur de fond */
+/* Fonction permettant d'afficher des ombres */
+/* Fonction pour mettre le contenu en colonne*/
+.restaurant_main .main_submitbutton, .restaurant_main .menu_section_entry .item_description, .restaurant_main .menu_section_dish .item_description, .restaurant_main .menu_section_dessert .item_description, .restaurant_main .menu_section_entry .item, .restaurant_main .menu_section_dish .item, .restaurant_main .menu_section_dessert .item, .restaurant_main .menu_section .main_title, .restaurant_header, footer .footer_list, main .restaurants_section .restaurants_article_list .restaurants_list_item_description_heart, main .restaurants_section .restaurants_article_list .restaurants_list_item_description, main .restaurants_section .restaurants_article_list, main .explore_and_working_section .working_article_list_item_number, main .explore_and_working_section .working_article_list_item_icon, main .explore_and_working_section .working_article_list_item_description, main .explore_and_working_section .working_article_list_item, main .explore_and_working_section .working_article_list, main .explore_and_working_section .working_article, main .explore_and_working_section .explore_article, main .explore_and_working_section, main .city_form {
+  /* Classe muette permettant d'aligner le contenu */
+  display: flex;
+}
+
+.restaurant_main .menu_section_entry h3, .restaurant_main .menu_section_dish h3, .restaurant_main .menu_section_dessert h3 {
+  /* Classe muette permettant de passer en majuscule les titres des menus */
+  text-transform: uppercase;
+  font-size: 25px;
+  padding-top: 50px;
+  position: relative;
+  color: #333333;
+  padding-bottom: 12px;
+}
+
+.restaurant_main .menu_section_entry h3::before, .restaurant_main .menu_section_dish h3::before, .restaurant_main .menu_section_dessert h3::before {
+  /* Classe muette permettant de souligner les titre des menus */
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 1px;
+  bottom: 0;
+  border-bottom: 5px solid rgb(153, 226, 208);
+}
+
+.restaurant_main .menu_section_entry, .restaurant_main .menu_section_dish, .restaurant_main .menu_section_dessert {
+  /* Classe muette permettant d'appliquer les parametres standards des menus */
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loader {
+  /*Layout du loader ( a refaire ) */
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #f2f2f2;
+  animation: loader 0.01s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader__item {
+  border: 16px solid rgb(147, 86, 220);
+  border-radius: 50%;
+  border-top: 16px solid rgb(147, 86, 220);
+  border-right: 16px solid #FF79DA;
+  border-bottom: 16px solid rgb(245, 237, 255);
+  border-left: 16px solid rgb(153, 226, 208);
+  width: 50px;
+  height: 50px;
+  animation: spin 500ms linear infinite;
+}
+
+header {
+  /* Layout du Header ( page principal ) */
+}
+header .header_title {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+}
+
+main .city_form {
+  /* Parametre du formulaire de ville */
+  background-color: #f2f2f2;
+  align-items: center;
+  justify-content: center;
+  padding-left: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 15px;
+  width: 200px;
+  height: 50px;
+  margin: auto;
+}
+main .city_form--marker {
+  color: #333333;
+}
+main .city_form_input {
+  outline: none;
+  border: none;
+  padding-top: 5px;
+  padding-left: 12px;
+  background-color: #f2f2f2;
+}
+main .city_form_input::placeholder {
+  color: #333333;
+  font-weight: bolder;
+  font-size: 17px;
+}
+main .explore_and_working_section {
+  /* Parametre de la section regroupant exploration et fonctionnement */
+  flex-direction: column;
+}
+main .explore_and_working_section .explore_article {
+  /* Parametre de la partie exploration */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 25px;
+  padding-top: 40px;
+  margin: 1%;
+  border-radius: 15px;
+  background-color: rgb(245, 237, 255);
+}
+main .explore_and_working_section .explore_article p {
+  color: #333333;
+  font-size: 23px;
+  padding-bottom: 25px;
+}
+main .explore_and_working_section .explore_article_title {
+  font-weight: bold;
+  font-size: 35px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+main .explore_and_working_section .explore_article .btn {
+  /* Parametre du boutton */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: linear-gradient(160deg, rgb(237, 115, 218), rgb(161, 91, 220));
+  border: none;
+  border-radius: 30px;
+  padding: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-bottom: 50px;
+  color: white;
+  font-size: 18px;
+}
+main .explore_and_working_section .explore_article .btn:hover {
+  animation: shadow-hover 500ms forwards;
+  background: linear-gradient(160deg, #f08ae0 0%, #ad70e0 100%);
+  cursor: pointer;
+}
+main .explore_and_working_section .explore_article > * {
+  margin: 10px;
+}
+main .explore_and_working_section .working_article {
+  /* Parametre de la partie fonctionnement */
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+main .explore_and_working_section .working_article h3 {
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+}
+main .explore_and_working_section .working_article_list {
+  /* Parametre de la liste du fonctionnement */
+}
+main .explore_and_working_section .working_article_list_item {
+  /* Parametre des item de la liste fonctionnement */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  align-items: center;
+  background-color: #f2f2f2;
+  margin-bottom: 15px;
+  padding: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  width: 25%;
+  cursor: pointer;
+}
+main .explore_and_working_section .working_article_list_item_description {
+  align-items: center;
+}
+main .explore_and_working_section .working_article_list_item_icon {
+  /* Parametre des icons de la liste fonctionnement */
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  color: #737373;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 30px;
+}
+main .explore_and_working_section .working_article_list_item_text {
+  /* Parametre du texte de la liste fonctionnement */
+  font-weight: bold;
+  font-size: 20px;
+}
+main .explore_and_working_section .working_article_list_item_number {
+  /* Parametre des numéros de la liste fonctionnement */
+  background-color: rgb(147, 86, 220);
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(147, 86, 220);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  color: white;
+  margin-left: -40px;
+}
+main .explore_and_working_section .working_article_list_item:last-child {
+  /* Parametre du dernier item de la liste fonctionnement */
+  background-color: rgb(245, 237, 255);
+}
+main .explore_and_working_section .working_article_list_item:last-child .working_article_list_item_icon {
+  color: rgb(147, 86, 220);
+}
+main .restaurants_section {
+  /* Parametre de la partie restaurant */
+  background-color: #f2f2f2;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  border-radius: 20px;
+  margin: 1%;
+}
+main .restaurants_section h3 {
+  font-size: 30px;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+main .restaurants_section .restaurants_article_list {
+  /* Parametre de la liste d'article restaurant */
+  flex-wrap: wrap;
+  margin: auto;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item {
+  /* Parametre des articles restaurants */
+  text-decoration: none;
+  color: black;
+  width: 50%;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item figure {
+  /* Parametre de l'image d'un restaurant */
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  position: relative;
+  display: block;
+  margin: 10px;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item_image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item_description {
+  /* Parametre de la description d'un restaurant */
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 70px;
+  padding: 15px;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item_description h4 {
+  font-weight: 900;
+  font-size: 25px;
+  padding-bottom: 5px;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item_description span {
+  font-size: 25px;
+  color: #333333;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item_description_heart {
+  /* Parametre de l'icon coeur d'un restaurant */
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+  justify-content: right;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item_description_heart_1 {
+  /* Parametre du coeur du restaurant */
+  font-size: 30px;
+  color: transparent;
+  -webkit-text-stroke: 1px darkslategray;
+  stroke-width: 50;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item_description_heart_1:hover {
+  /* Parametre de l'animation du coeur*/
+  -webkit-text-stroke: 1px transparent;
+  animation: fill 1s ease-out;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item_badge {
+  /* Parametre du badge nouveau d'un restaurant */
+  background-color: rgb(153, 226, 208);
+  color: #278870;
+  font-weight: bold;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+main .restaurants_section .restaurants_article_list .restaurants_list_item figure:hover {
+  animation: shadow-hover 500ms forwards;
+}
+
+footer {
+  /* Layout du footer */
+  width: auto;
+  padding: 20px;
+  background-color: rgb(53, 53, 53);
+}
+footer h1 {
+  color: white;
+  font-weight: normal;
+  font-size: 20px;
+}
+footer .footer_list {
+  list-style: none;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+footer .footer_list_item {
+  padding-top: 10px;
+}
+footer .footer_list_item_link {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+footer .footer_list_item_link:hover {
+  color: rgb(147, 86, 220);
+}
+footer .footer_list_item_icon {
+  width: 20px;
+  height: 20px;
+  padding-right: 15px;
+}
+
+.restaurant_header {
+  /* Parametre du header des pages restaurant */
+  align-items: center;
+}
+.restaurant_header h1 {
+  font-size: 40px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  margin: auto;
+}
+.restaurant_header .header_return {
+  font-size: 40px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-left: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.restaurant_main {
+  /* Page Restaurant */
+  background-color: #f2f2f2;
+  margin-bottom: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.restaurant_main .main_banner {
+  /* Banniere*/
+  width: 100%;
+  z-index: 1;
+}
+.restaurant_main .main_banner_image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.5);
+}
+.restaurant_main .menu_section {
+  /* Parametre de la partie menu */
+  transform: translateY(-50px);
+  z-index: 2;
+  background-color: white;
+  padding: 20px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-wrap: wrap;
+}
+.restaurant_main .menu_section .main_title {
+  /* Parametre du titre du restaurant */
+  font-family: "Shrikhand";
+  font-weight: bold;
+  align-items: center;
+  padding-top: 20px;
+  font-size: 30px;
+  justify-content: space-between;
+  width: 100%;
+}
+.restaurant_main .menu_section .main_title_heart_1 {
+  /* Parametre du coeur du restaurant */
+  font-size: 30px;
+  color: transparent;
+  -webkit-text-stroke: 1px darkslategray;
+  stroke-width: 50;
+}
+.restaurant_main .menu_section .main_title_heart_1:hover {
+  /* Parametre de l'animation du coeur*/
+  -webkit-text-stroke: 1px transparent;
+  animation: fill 1s ease-out;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.restaurant_main .menu_section_entry, .restaurant_main .menu_section_dish, .restaurant_main .menu_section_dessert {
+  /* Parametre des titres entrées plats desserts */
+}
+.restaurant_main .menu_section_entry .item, .restaurant_main .menu_section_dish .item, .restaurant_main .menu_section_dessert .item {
+  /* Parametre des cartes des plats */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  width: 100%;
+  height: 110px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.restaurant_main .menu_section_entry .item_description, .restaurant_main .menu_section_dish .item_description, .restaurant_main .menu_section_dessert .item_description {
+  /* Parametre des descriptions des plats */
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+  min-width: 0px;
+}
+.restaurant_main .menu_section_entry .item_description_text, .restaurant_main .menu_section_dish .item_description_text, .restaurant_main .menu_section_dessert .item_description_text {
+  min-width: 0px;
+}
+.restaurant_main .menu_section_entry .item_description_text h4, .restaurant_main .menu_section_dish .item_description_text h4, .restaurant_main .menu_section_dessert .item_description_text h4 {
+  font-size: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.restaurant_main .menu_section_entry .item_description_text p, .restaurant_main .menu_section_dish .item_description_text p, .restaurant_main .menu_section_dessert .item_description_text p {
+  font-size: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.restaurant_main .menu_section_entry .item_description_price, .restaurant_main .menu_section_dish .item_description_price, .restaurant_main .menu_section_dessert .item_description_price {
+  /* Parametre du prix */
+  align-self: flex-end;
+  font-weight: bold;
+  font-size: 25px;
+}
+.restaurant_main .menu_section_entry .item_validate, .restaurant_main .menu_section_dish .item_validate, .restaurant_main .menu_section_dessert .item_validate {
+  /*Parametre de la partie validation */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -150px;
+  background-color: #99E2D0;
+  color: #FFF;
+  font-size: 30px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 100%;
+  width: 150px;
+  transition: margin-right 0.8s ease-in-out;
+}
+.restaurant_main .menu_section_entry .item:hover .item_validate, .restaurant_main .menu_section_dish .item:hover .item_validate, .restaurant_main .menu_section_dessert .item:hover .item_validate {
+  /* Animation check */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+}
+.restaurant_main .menu_section_entry .item:hover .item_validate i, .restaurant_main .menu_section_dish .item:hover .item_validate i, .restaurant_main .menu_section_dessert .item:hover .item_validate i {
+  animation: spin 1.5s;
+}
+.restaurant_main .menu_section_entry .item_1, .restaurant_main .menu_section_dish .item_1, .restaurant_main .menu_section_dessert .item_1 {
+  animation: menu-apparition 2s forwards;
+}
+.restaurant_main .menu_section_entry .item_2, .restaurant_main .menu_section_dish .item_2, .restaurant_main .menu_section_dessert .item_2 {
+  animation: menu-apparition 2.5s forwards;
+}
+.restaurant_main .menu_section_entry .item_3, .restaurant_main .menu_section_dish .item_3, .restaurant_main .menu_section_dessert .item_3 {
+  animation: menu-apparition 3s forwards;
+}
+.restaurant_main .menu_section_entry .item_4, .restaurant_main .menu_section_dish .item_4, .restaurant_main .menu_section_dessert .item_4 {
+  animation: menu-apparition 3.5s forwards;
+}
+.restaurant_main .menu_section_entry .item_5, .restaurant_main .menu_section_dish .item_5, .restaurant_main .menu_section_dessert .item_5 {
+  animation: menu-apparition 4s forwards;
+}
+.restaurant_main .menu_section_entry .item_6, .restaurant_main .menu_section_dish .item_6, .restaurant_main .menu_section_dessert .item_6 {
+  animation: menu-apparition 4.5s forwards;
+}
+.restaurant_main .menu_section_entry .item_7, .restaurant_main .menu_section_dish .item_7, .restaurant_main .menu_section_dessert .item_7 {
+  animation: menu-apparition 5s forwards;
+}
+.restaurant_main .menu_section_entry .item_8, .restaurant_main .menu_section_dish .item_8, .restaurant_main .menu_section_dessert .item_8 {
+  animation: menu-apparition 5.5s forwards;
+}
+.restaurant_main .menu_section_entry .item_9, .restaurant_main .menu_section_dish .item_9, .restaurant_main .menu_section_dessert .item_9 {
+  animation: menu-apparition 6s forwards;
+}
+.restaurant_main .menu_section_entry .item_10, .restaurant_main .menu_section_dish .item_10, .restaurant_main .menu_section_dessert .item_10 {
+  animation: menu-apparition 6.5s forwards;
+}
+.restaurant_main .main_submitbutton {
+  /* Parametre du boutton de validation de commande */
+  align-items: center;
+  justify-content: center;
+}
+.restaurant_main .btn {
+  /* Parametre boutton */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: linear-gradient(160deg, rgb(237, 115, 218), rgb(161, 91, 220));
+  border: none;
+  border-radius: 30px;
+  padding: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-bottom: 50px;
+  color: white;
+  font-size: 18px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.restaurant_main .btn:hover {
+  animation: shadow-hover 500ms forwards;
+  background: linear-gradient(160deg, #f08ae0 0%, #ad70e0 100%);
+  cursor: pointer;
+}
+
+/* Loader*/
+@keyframes loader {
+  /*Opacité du loader*/
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+@keyframes slide {
+  /*Apparition du check*/
+  from {
+    width: 0px;
+  }
+  to {
+    width: 150px;
+  }
+}
+@keyframes shadow-hover {
+  from {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  to {
+    box-shadow: 0px 10px 13px -7px #000000, -2px 17px 50px -4px rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes menu-apparition {
+  0% {
+    opacity: 0;
+    margin-top: 30px;
+  }
+  100% {
+    margin-top: 20px;
+    opacity: 1;
+  }
+}
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+* {
+  /* Paramètre de base (pas de marge) */
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* Police principale du contenu */
+  font-family: "Roboto";
+}
+
+.Content_container {
+  /* Taille max du contenu ( version ordinateur ) */
+  max-width: 1400px;
+  margin: auto;
+}
+
+h1 {
+  /* Police des titres */
+  font-family: "Shrikhand";
+}
+
+h2 {
+  /* Titre h2 en gras */
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .Content_container {
+    max-width: 992px;
+  }
+  main .explore_and_working_section .working_article .working_article_list {
+    flex-direction: column;
+  }
+  main .explore_and_working_section .working_article .working_article_list_item {
+    width: 80%;
+  }
+  .restaurant_main {
+    flex-direction: column;
+  }
+  .restaurant_main .menu_section_entry, .restaurant_main .menu_section_dish, .restaurant_main .menu_section_dessert {
+    width: 100%;
+    margin: auto;
+  }
+}
+@media (max-width: 768px) {
+  #Content_container {
+    max-width: 768px;
+  }
+  main .city_form {
+    background-color: #d9d9d9;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.5);
+    border-radius: 0px;
+    width: auto;
+    padding-left: 20px;
+  }
+  main .city_form_input {
+    background-color: #d9d9d9;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+  }
+  main .explore_and_working_section {
+    flex-direction: column;
+  }
+  main .explore_and_working_section .explore_article {
+    background-color: #f2f2f2;
+    width: auto;
+    margin: 0px;
+    border-radius: 0px;
+  }
+  main .explore_and_working_section .explore_article_list {
+    flex-direction: column;
+  }
+  main .explore_and_working_section .working_article_list_item {
+    width: 80%;
+  }
+  main .restaurants_section {
+    border-radius: 0px;
+    margin: 0px;
+  }
+  main .restaurants_section h3 {
+    padding-left: 20px;
+  }
+  main .restaurants_section .restaurants_article_list {
+    flex-direction: column;
+    width: auto;
+  }
+  main .restaurants_section .restaurants_article_list .restaurants_list_item {
+    margin: auto;
+    width: 94%;
+  }
+  .restaurant_main {
+    background-color: #f2f2f2;
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .restaurant_main .menu_section_entry, .restaurant_main .menu_section_dish, .restaurant_main .menu_section_dessert {
+    width: 100%;
+  }
+  .footer_list {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

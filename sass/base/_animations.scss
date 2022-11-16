@@ -1,0 +1,61 @@
+/* Loader*/
+@keyframes loader {
+  /*Opacité du loader*/
+    100% {
+      opacity: 0;
+      z-index: -10;
+    }
+}
+
+@keyframes slide{
+  /*Apparition du check*/
+    from{width: 0px;
+      }
+    to{
+        width:150px;
+    }
+}
+
+
+@keyframes shadow-hover{
+    from {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    to {
+      box-shadow: 0px 10px 13px -7px #000000, -2px 17px 50px -4px rgba(0,0,0,0.5);
+      
+    }
+}
+
+@keyframes spin { 
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes menu-apparition {
+  0% {
+    opacity: 0;
+    margin-top: 30px;
+  }
+  100% {
+    margin-top: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes fill{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
