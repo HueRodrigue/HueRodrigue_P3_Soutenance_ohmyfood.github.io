@@ -1,3 +1,9 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url(‘/fonts/Roboto-Regular.woff2’) format(‘woff2’),
+		url(‘/fonts/Robot-Regular.ttf’) format(‘truetype’)
+}
+
 *{
     /* Paramètre de base (pas de marge) */
     padding: 0;
@@ -22,5 +28,5 @@ h1{
 
 h2{
     /* Titre h2 en gras */
-    font-weig t: bold;
+    font-weight: bold;
 }
