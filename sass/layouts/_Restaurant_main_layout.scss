@@ -66,7 +66,7 @@
             @extend %menu_params;
             
             h3{
-                font-family: "Roboto";
+                
                 @extend %menu_section_params;
             }
 
@@ -75,7 +75,7 @@
             }
 
             .item{
-                font-family: "Roboto";
+                
                 /* Parametre des cartes des plats */
                 @include box_shadow;
                 @include set_background_color($basic_color);
@@ -113,7 +113,7 @@
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            font-family: 'roboto';
+                            font-family: 'Roboto';
                         }
                     }
 
