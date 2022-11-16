@@ -1,20 +1,16 @@
-@font-face {
-	font-family: 'Roboto';
-	src: url(‘/fonts/Roboto-Regular.woff2’) format(‘woff2’),
-		url(‘/fonts/Robot-Regular.ttf’) format(‘truetype’)
-}
+
 
 *{
     /* Paramètre de base (pas de marge) */
     padding: 0;
     margin: 0;
-    font-family: Arial;
 }
 
 body{
     /* Police principale du contenu */
-    font-family: $text_police;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 
 .Content_container{
     /* Taille max du contenu ( version ordinateur ) */
